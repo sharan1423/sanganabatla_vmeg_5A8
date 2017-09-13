@@ -208,12 +208,38 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void removeToIndex(int index) {
-		// Add your implementation here
+		if(index<=0 || index>students.length)
+              {
+                 throw new IllegalArgumentException();
+              }
+          for(int i=0;i<index;i++)
+			{
+				students[i].id=0;
+                        students[i].fullName=null;
+                        students[i].birthDate=null;
+                        students[i].avgMark=0.0d;
+                    }
 	}
 
 	@Override
 	public void removeToElement(Student student) {
-		// Add your implementation here
+		if(student==null)
+                  {
+                     throw new IllegalArgumentException();
+                  }
+            for(int i=0;i<students.length;i++)
+               {
+                  if(student.id==students[i].id)
+                      {
+                         for(int j=0;j<i;j++)
+			{
+				students[j].id=0;
+                        students[j].fullName=null;
+                        students[j].birthDate=null;
+                        students[j].avgMark=0.0d;
+                    }
+                  }
+                }
 	}
 
 	@Override
