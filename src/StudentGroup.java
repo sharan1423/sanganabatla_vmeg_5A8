@@ -99,7 +99,7 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void addLast(Student student) {
-		if(index<=0 || index>students.length || student==null)
+		if(student==null)
                   {
                      throw new IllegalArgumentException();
                   }
